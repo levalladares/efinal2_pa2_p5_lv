@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<style>
+		input[type="text"] {
+			color: white;
+			background-color: black;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	<form th:action="@{/matriculas/insertar}" th:object="${matriculaTO}" th:method="POST">
+		<table class="table table-dark table-sm table table-bordered border-white">
+			<tr>
+				<td><label>Cedula Estudiante:</label></td>
+				<td><input type="text" id="cedulaEstudiante" th:field="${matriculaTO.cedulaEstudiante}"></td>
+			</tr>
+			<tr>
+				<td><label>Codigo Materia 1:</label></td>
+				<td><input type="text" id="cod1" th:field="${matriculaTO.cod1}"></td>
+			</tr>
+			<tr>
+				<td><label>Codigo Materia 2:</label></td>
+				<td><input type="text" id="cod2" th:field="${matriculaTO.cod2}"></td>
+			</tr>
+			<tr>
+				<td><label>Codigo Materia 3:</label></td>
+				<td><input type="text" id="cod3" th:field="${matriculaTO.cod3}"></td>
+			</tr>
+			<tr>
+				<td><label>Codigo Materia 4:</label></td>
+				<td><input type="text" id="cod4" th:field="${matriculaTO.cod4}"></td>
+			</tr>
+		</table>
+		<input class="btn btn-dark" type="submit" value="Matricular">
+	</form>
+</body>
+
+</html>
